@@ -28,12 +28,18 @@ export default function App() {
     return (
         <div className="App">
             <NavBar search={(q) => setQuery(q)} />
-                    {personagem.map((heroeData) => {
-                            return (
-                                <Card srcImage={`${heroeData.thumbnail.path}.${heroeData.thumbnail.extension}`}
-                                    heroeName={heroeData.name} id={heroeData.id} key={heroeData.id}/>
-                            )
-                        })}
+                    
+                    {query !== '' ? 
+                        <div>
+                            {personagem.map((heroeData) => {
+                                    return (
+                                        <Card srcImage={`${heroeData.thumbnail.path}.${heroeData.thumbnail.extension}`}
+                                            heroeName={heroeData.name} id={heroeData.id} key={heroeData.id}/>
+                                    )
+                                })}
+                        </div> : null
+                    } 
+                   
             <Routes />
         </div>
     );

@@ -5,7 +5,7 @@ const Card = ({ heroeName, srcImage }) => {
     return (
 
         <>
-            <div class="container">
+            <div class="container1">
 
 
                 <div className="catalogo">

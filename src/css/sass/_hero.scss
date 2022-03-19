@@ -1,32 +1,19 @@
-.fadedfx {
-    background-color: #fe5652;
-    visibility: hidden;
-  }
+.container1{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 36px;
   
-  .fadeIn {
-    animation-name: fadeIn;
-    -webkit-animation-name: fadeIn;
-    animation-duration: 1.5s;
-    -webkit-animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
-    visibility: visible !important;
+}
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0.0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
   }
-  
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0.0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}
+
