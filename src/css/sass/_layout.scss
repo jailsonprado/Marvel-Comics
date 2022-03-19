@@ -1,0 +1,54 @@
+header{
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 8px 24px;
+}
+
+a{
+    text-decoration: none;
+    color: $white-dark;
+}
+
+hr{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.flex{
+    display: flex;
+}
+
+.flex-space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container{
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 8px 24px;
+}
+
+
+
+.input-search{
+    height: 40px;
+    min-width: 300px;
+
+    background-color: $black-light;
+
+    border: 0;
+    border-radius: 4px;
+
+    color: $white-light;
+    padding: 8px;
+}
+
+

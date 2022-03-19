@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import 'sass/colors';
+@import 'sass/typography';
+@import 'sass/spacing';
+
+body {
+    width: 100%;
+    background-color: $white-dark;
+}
+
+@import 'sass/layout';
+@import 'sass/navbar';
+@import 'sass/home';
+@import 'sass/hero';

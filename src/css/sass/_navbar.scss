@@ -1,0 +1,14 @@
+input[type="search"]{
+    background: transparent;
+    border: 1px red solid;
+    color: $white-dark;
+
+    &::before{
+        background: transparent;
+        border: 1px red solid;
+        color: $white-dark;
+    }
+    &::-webkit-search-cancel-button{
+        outline: none;
+    }
+}
