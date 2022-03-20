@@ -4,8 +4,9 @@ import { useParams, Link } from 'react-router-dom';
 import md5 from 'md5';
 import { CCardImage ,CCard,CCardBody,CCardTitle,CCardText } from '@coreui/react'
 
-const publicKey = 'c2f121d2b9742e418594ffa5adf6a5f4'
-const privateKey = '4b68c34968ff1590ccbff2014b0b155d89ab4add'
+const publicKey = process.env.REACT_APP_API_PUBLIC_KEY;
+const privateKey = process.env.REACT_APP_API_PRIVATE_KEY;
+
 const time = Number(new Date())
 const hash = md5(time + privateKey + publicKey) // Gerando hash
 

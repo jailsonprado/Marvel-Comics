@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 
 
-const publicKey = 'c2f121d2b9742e418594ffa5adf6a5f4'
-const privateKey = '4b68c34968ff1590ccbff2014b0b155d89ab4add'
+const publicKey = process.env.REACT_APP_API_PUBLIC_KEY;
+const privateKey = process.env.REACT_APP_API_PRIVATE_KEY;
 
 const time = Number(new Date())
 const hash = md5(time + privateKey + publicKey)
@@ -57,10 +57,10 @@ export default function Home() {
             </div>
 
 
-            {loading ? <div class="text-center">
+            {loading ? <div className="text-center">
                 <h3>Loading...</h3>
-                <div class="spinner-border text-danger" role="status">
-                    <span class="sr-only">Loading...</span>
+                <div className="spinner-border text-danger" role="status">
+                    <span className="sr-only">Loading...</span>
                    
                 </div>
             </div>

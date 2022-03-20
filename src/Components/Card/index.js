@@ -5,14 +5,14 @@ const Card = ({ heroeName, srcImage }) => {
     return (
 
         <>
-            <div class="container1">
+            <div className="container1">
 
 
                 <div className="catalogo">
                     <img className="article-img"
                         src={srcImage} alt={`Imagen de ${heroeName}`}
                     />
-                    <span class="card-title">{heroeName}</span>
+                    <span className="card-title">{heroeName}</span>
 
 
 
