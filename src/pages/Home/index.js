@@ -67,9 +67,11 @@ export default function Home() {
 
                 : <div>
                     <div className="container-grid">
+                    
                         {personagem.map((item) => {
                             return (
                                 <>
+                                   
                                     <div className="catalogo" key={item.id}>
                                         <img className="article-img"
                                             src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
@@ -100,6 +102,7 @@ export default function Home() {
                             Proxima pagina &#8674;
                         </a>
                     </div>
+                    <div className="text-center text-danger">Página {page} de 5.152 </div>
                 </div>
             }
         </div>

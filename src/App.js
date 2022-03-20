@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Routes from './routes'
 import NavBar from './Components/NavBar';
-import Card from './Components/Card';
 import axios from 'axios';
 import md5 from 'md5';
+import { CCardImage ,CCard,CCardBody,CCardTitle,CRow, CCol } from '@coreui/react'
 
 const publicKey = 'c2f121d2b9742e418594ffa5adf6a5f4'
 const privateKey = '4b68c34968ff1590ccbff2014b0b155d89ab4add'
@@ -19,10 +19,10 @@ export default function App() {
 
     useEffect(() => {
         async function loadContent() {
-            if( query !== ''){
+            if (query !== '') {
                 const response = await axios.get(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=${time}&apikey=${publicKey}&hash=${hash}&limit=10`)
-                    setPersonagem(response.data.data.results)
-               }
+                setPersonagem(response.data.data.results)
+            }
         }
         loadContent()
     }, [query])
@@ -30,15 +30,28 @@ export default function App() {
     return (
         <div className="App">
             <NavBar search={(q) => setQuery(q)} />
-                    {query !== '' ? 
-                        <div>
-                            {personagem.map((heroeData) => { return (
-                                        <Card srcImage={`${heroeData.thumbnail.path}.${heroeData.thumbnail.extension}`}
-                                            heroeName={heroeData.name} id={heroeData.id} key={heroeData.id}/>
-                                    )
-                                })}
-                        </div> : null
-                    }       
+            {query !== '' ?
+                <div>
+                    {personagem.map((item) => {
+                        return (
+
+                            <div className="container">
+                                <CRow xs={{ cols: 4, gutter: 4 }} md={{ cols: 4 }} className="teste1">
+                                    <CCol xs className="teste2">
+                                        <CCard className="teste3">
+                                            <CCardImage orientation="top" className="card-image-list" src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
+                                            <CCardBody>
+                                                <CCardTitle className="text-center text-white">{item.name}</CCardTitle>
+                                            </CCardBody>
+                                           
+                                        </CCard>
+                                    </CCol>
+                                    </CRow>
+                            </div>
+                        )
+                    })}
+                </div> : null
+            }
             <Routes />
         </div>
     );

@@ -192,8 +192,8 @@ input[type="search"]::-webkit-search-cancel-button {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 12px;
-  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 8px 6px 4px rgba(255, 255, 255, 0.137);
+  box-shadow: 8px 6px 4px rgba(255, 255, 255, 0.144);
 }
 
 .article-title {
@@ -310,6 +310,17 @@ input[type="search"]::-webkit-search-cancel-button {
 .btn-back {
   margin-left: 40px;
   margin-top: 10px;
+}
+
+.teste3 {
+  background: #c31432;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#ea1d22), to(#000000));
+  background: linear-gradient(to top, #ea1d22, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .card-image-list {
