@@ -66,7 +66,7 @@ Inicie o servidor
 
 ## Demonstração
 
-- [Link do projeto hospedado](jailsonprado-comics.netlify.app/)
+- [Link do projeto hospedado](https://jailsonprado-comics.netlify.app/)
 
 
 ## Licença
