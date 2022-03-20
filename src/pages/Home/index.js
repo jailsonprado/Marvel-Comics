@@ -24,12 +24,9 @@ export default function Home() {
 
     useEffect(() => {
         async function loadContent() {
-            const response = await axios.get(`http://gateway.marvel.com/v1/public/comics?&ts=${time}&apikey=${publicKey}&hash=${hash}&limit=10`)
-                .then(response => {
+            const response = await axios.get(`http://gateway.marvel.com/v1/public/comics?orderBy=focDate&ts=${time}&apikey=${publicKey}&hash=${hash}&limit=10`)
                     setLoading(0)
-                    setPersonagem(response.data.data.results)
-                    console.log(response.data.data.results)
-                }).catch(err => console.log(err))
+                    setPersonagem(response.data.data.results)        
         }
         loadContent()
 
@@ -37,7 +34,7 @@ export default function Home() {
 
     useEffect(() => {
         async function loadPage() {
-            const response = await axios.get(`http://gateway.marvel.com/v1/public/comics?offset=${page}&ts=${time}&apikey=${publicKey}&hash=${hash}&limit=10`)
+            const response = await axios.get(`http://gateway.marvel.com/v1/public/comics?orderBy=focDate&offset=${page}&ts=${time}&apikey=${publicKey}&hash=${hash}&limit=10`)
                 setLoading(0)
                 setPersonagem(response.data.data.results)  
         }
@@ -60,39 +57,26 @@ export default function Home() {
             {loading ? <div className="text-center">
                 <h3>Loading...</h3>
                 <div className="spinner-border text-danger" role="status">
-                    <span className="sr-only">Loading...</span>
-                   
+                    <span className="sr-only">Loading...</span>  
                 </div>
             </div>
-
                 : <div>
                     <div className="container-grid">
-                    
                         {personagem.map((item) => {
                             return (
                                 <>
-                                   
                                     <div className="catalogo" key={item.id}>
                                         <img className="article-img"
                                             src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
                                             alt={item.title} />
                                         <div className="details">
-                                            <Link to={`/comics/${item.id}`} className="btn text-white"   >
-                                                Ver detalhes
-                                            </Link>
+                                            <Link to={`/comics/${item.id}`} className="btn text-white">Ver detalhes</Link>
                                         </div>
-                                       
-
-                                        <div className="article-title">
-                                            {item.title}
-
-                                        </div>
+                                        <div className="article-title">{item.title}</div>
                                     </div>
                                 </>
                             )
-
                         })}
-
                     </div>
                     <div className="btn-groupe">
                         <a className="btn text-white" onClick={() => handlePage('back')} disabled={page < 2} >
