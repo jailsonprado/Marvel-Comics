@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Details from './Components/Details';
+import Details from './pages/Details';
 
 import Home from './pages/Home';
 
