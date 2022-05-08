@@ -27,7 +27,7 @@ export default function Details() {
         <>
             {personage.map((item) =>
                 <div className="cards">
-                    <Link to="/" className="btn text-white btn-back">&#8672;Home</Link>
+                    <Link to="/" className="btn text-white btn-back">&#8672;  Home</Link>
                     <CCard className="mb-3 card-image-list">
                     <CCardBody className="card-body">
                             <CCardTitle className="text-white">{item.title}</CCardTitle>
